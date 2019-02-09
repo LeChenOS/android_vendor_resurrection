@@ -51,6 +51,13 @@ PRODUCT_COPY_FILES += \
     vendor/rr/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
 endif
 
+# Phonelocation!
+PRODUCT_COPY_FILES +=  \
+    vendor/rr/prebuilt/common/media/location/suda-phonelocation.dat:system/media/location/suda-phonelocation.dat
+# World SPN overrides list
+PRODUCT_COPY_FILES += \
+    vendor/rr/prebuilt/common/etc/spn-conf.xml:system/etc/spn-conf.xml
+
 # Backup Services whitelist
 PRODUCT_COPY_FILES += \
     vendor/rr/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
@@ -174,6 +181,11 @@ PRODUCT_PACKAGES += \
 # Exchange support
 PRODUCT_PACKAGES += \
     Exchange2
+
+# LocationProvider
+PRODUCT_PACKAGES += \
+    PhoneLocationProvider \
+    ForceStop
 
 # Berry styles
 PRODUCT_PACKAGES += \
